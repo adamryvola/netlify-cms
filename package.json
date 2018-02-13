@@ -19,7 +19,8 @@
     "lint:staged": "lint-staged",
     "deps": "npm-check -s",
     "deps:update": "npm-check -u",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "extract": "node extract.js"
   },
   "lint-staged": {
     "*.js": [
@@ -131,16 +132,19 @@
     "gotrue-js": "^0.9.15",
     "gray-matter": "^3.0.6",
     "history": "^4.7.2",
+    "i18n-extract": "^0.5.1",
     "immutable": "^3.7.6",
     "is-hotkey": "^0.1.1",
     "js-base64": "^2.1.9",
     "js-yaml": "^3.10.0",
     "jwt-decode": "^2.1.0",
     "localforage": "^1.4.2",
-    "lodash": "^4.13.1",
+    "lodash": "^4.17.5",
+    "lodash-keyarrange": "^1.1.0",
     "mdast-util-definitions": "^1.2.2",
     "mdast-util-to-string": "^1.0.4",
     "moment": "^2.11.2",
+    "node-polyglot": "^2.2.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-aria-menubutton": "^5.1.0",
