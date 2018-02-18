@@ -20,7 +20,7 @@ const CollectionTop = ({
         {
           newEntryUrl
             ? <Link className="nc-collectionPage-topNewButton" to={newEntryUrl}>
-                {`New ${collectionLabel}`}
+                {`Vytvořit: ${collectionLabel}`}
               </Link>
             : null
         }

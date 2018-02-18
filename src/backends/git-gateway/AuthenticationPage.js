@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from "react";
 import { partial } from 'lodash';
 import { Icon } from 'UI';
+import i18n from '../../i18n'
 
 let component = null;
 
@@ -93,7 +94,7 @@ export default class AuthenticationPage extends React.Component {
       return <section className="nc-gitGatewayAuthenticationPage-root">
         <Icon className="nc-githubAuthenticationPage-logo" size="500px" type="netlify-cms"/>
         <button className="nc-githubAuthenticationPage-button" onClick={this.handleIdentity}>
-          Login with Netlify Identity
+          Přihlásit pomocí Netlify Identity
         </button>
       </section>
     }
@@ -101,6 +102,7 @@ export default class AuthenticationPage extends React.Component {
     return (
       <section className="nc-gitGatewayAuthenticationPage-root">
         <Icon className="nc-githubAuthenticationPage-logo" size="500px" type="netlify-cms"/>
+        Pro editaci obsahu je nutné se přihlásit
         <form className="nc-gitGatewayAuthenticationPage-form" onSubmit={this.handleLogin}>
           {!error && <p>
             <span className="nc-gitGatewayAuthenticationPage-errorMsg">{error}</span>
@@ -125,7 +127,7 @@ export default class AuthenticationPage extends React.Component {
             onChange={partial(this.handleChange, 'password')}
           />
           <button className="nc-gitGatewayAuthenticationPage-button" disabled={inProgress}>
-            {inProgress ? "Logging in..." : "Login"}
+            {inProgress ? i18n.t("logging in...") : i18n.t("login")}
           </button>
         </form>
       </section>

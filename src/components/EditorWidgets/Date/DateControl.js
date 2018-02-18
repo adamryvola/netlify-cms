@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DateTime from 'react-datetime';
 import moment from 'moment';
+require('moment/locale/cs');
 
 export default class DateControl extends React.Component {
   static propTypes = {
@@ -51,6 +52,7 @@ export default class DateControl extends React.Component {
         onFocus={setActiveStyle}
         onBlur={setInactiveStyle}
         inputProps={{ className: classNameWrapper }}
+        locale={"cs"}
       />
     );
   }

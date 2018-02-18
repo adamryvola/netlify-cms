@@ -35,6 +35,8 @@ export default class Header extends React.Component {
 
     const avatarUrl = user.get('avatar_url');
 
+    const creatable = collections.filter(collection => collection.get('create')).toList();
+
     return (
       <div className="nc-appHeader-container">
         <div className="nc-appHeader-main">
@@ -63,23 +65,24 @@ export default class Header extends React.Component {
               </button>
             </nav>
             <div className="nc-appHeader-actions">
-              <Dropdown
-                classNameButton="nc-appHeader-button nc-appHeader-quickNew"
-                label={i18n.t("quickadd")}
-                dropdownTopOverlap="30px"
-                dropdownWidth="160px"
-                dropdownPosition="left"
-              >
-                {
-                  collections.filter(collection => collection.get('create')).toList().map(collection =>
-                    <DropdownItem
-                      key={collection.get("name")}
-                      label={collection.get("label")}
-                      onClick={() => this.handleCreatePostClick(collection.get('name'))}
-                    />
-                  )
-                }
-              </Dropdown>
+              {creatable && creatable.size > 0 ?
+                <Dropdown
+                  classNameButton="nc-appHeader-button nc-appHeader-quickNew"
+                  label={i18n.t("quickadd")}
+                  dropdownTopOverlap="30px"
+                  dropdownWidth="160px"
+                  dropdownPosition="left"
+                >
+                  {
+                    creatable.map(collection =>
+                      <DropdownItem
+                        key={collection.get("name")}
+                        label={collection.get("label")}
+                        onClick={() => this.handleCreatePostClick(collection.get('name'))}
+                      />
+                    )
+                  }
+                </Dropdown> : null}
               {
                 displayUrl
                   ? <a

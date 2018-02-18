@@ -42,7 +42,7 @@ export default class EditorToolbar extends React.Component {
         {
           showDelete
             ? <button className="nc-entryEditor-toolbar-deleteButton" onClick={onDelete}>
-                Delete entry
+                Smazat záznam
               </button>
             : null
         }
@@ -64,8 +64,8 @@ export default class EditorToolbar extends React.Component {
           dropdownWidth="150px"
           label={isPersisting ? i18n.t('publishing') : i18n.t('Publish')}
         >
-          <DropdownItem label="Publish now" icon="arrow" iconDirection="right" onClick={onPersist}/>
-          <DropdownItem label="Publish and create new" icon="add" onClick={onPersistAndNew}/>
+          <DropdownItem label="Publikovat hned" icon="arrow" iconDirection="right" onClick={onPersist}/>
+          <DropdownItem label="Publikovat jako novou verzi" icon="add" onClick={onPersistAndNew}/>
         </Dropdown>
       </div>
     );
@@ -195,7 +195,7 @@ export default class EditorToolbar extends React.Component {
             {
               hasChanged
                ? <div className="nc-entryEditor-toolbar-backStatus-hasChanged">{i18n.t('Unsaved Changes')}</div>
-               : <div className="nc-entryEditor-toolbar-backStatus">Changes saved</div>
+               : <div className="nc-entryEditor-toolbar-backStatus">Změny uloženy</div>
             }
           </div>
         </Link>

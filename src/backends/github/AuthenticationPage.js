@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Authenticator from 'Lib/netlify-auth';
 import { Icon } from 'UI';
+import i18n from '../../i18n';
 
 export default class AuthenticationPage extends React.Component {
   static propTypes = {
@@ -34,6 +35,7 @@ export default class AuthenticationPage extends React.Component {
 
     return (
       <section className="nc-githubAuthenticationPage-root">
+        Pro editaci obsahu je nutné se přihlásit
         <Icon className="nc-githubAuthenticationPage-logo" size="500px" type="netlify-cms"/>
         {loginError && <p>{loginError}</p>}
         <button
@@ -41,7 +43,7 @@ export default class AuthenticationPage extends React.Component {
           disabled={inProgress}
           onClick={this.handleLogin}
         >
-          <Icon type="github" /> {inProgress ? "Logging in..." : "Login with GitHub"}
+          <Icon type="github" /> {inProgress ? i18n.t("logging in...") : i18n.t("login")}
         </button>
       </section>
     );

@@ -139,7 +139,7 @@ export default class Widget extends Component {
 
       const error = {
         type: ValidationErrorTypes.CUSTOM,
-        message: `${ field.get('label', field.get('name')) } is processing.`,
+        message: `${ field.get('label', field.get('name')) } se zpracovává.`,
       };
 
       return { error };

@@ -211,7 +211,7 @@ class Editor extends React.Component {
     } else if (!window.confirm(i18n.t('wantToPublish'))) {
       return;
     } else if (entryDraft.get('hasChanged')) {
-      if (window.confirm('Your unsaved changes will be saved before publishing. Are you sure you want to publish?')) {
+      if (window.confirm('Vaše neuložené změny budou před publikací uloženy. Jste si jistý, že chcete publikovat?')) {
         await persistEntry(collection);
       } else {
         return;
@@ -292,7 +292,7 @@ class Editor extends React.Component {
     } else if (entryDraft == null
       || entryDraft.get('entry') === undefined
       || (entry && entry.get('isFetching'))) {
-      return <Loader active>Loading entry...</Loader>;
+      return <Loader active>Načítání záznamů...</Loader>;
     }
 
     return (

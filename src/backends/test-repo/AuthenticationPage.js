@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Icon } from 'UI';
+import i18n from '../../i18n';
 
 export default class AuthenticationPage extends React.Component {
   static propTypes = {
@@ -24,7 +25,7 @@ export default class AuthenticationPage extends React.Component {
           disabled={inProgress}
           onClick={this.handleLogin}
         >
-          {inProgress ? "Logging in..." : "Login"}
+          {inProgress ? i18n.t("logging in...") : i18n.t("login")}
         </button>
       </section>
     );

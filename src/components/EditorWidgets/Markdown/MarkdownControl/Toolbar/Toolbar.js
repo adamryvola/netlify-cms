@@ -76,14 +76,6 @@ export default class Toolbar extends React.Component {
             disabled={disabled}
           />
           <ToolbarButton
-            type="code"
-            label="Code"
-            icon="code"
-            onClick={onMarkClick}
-            isActive={selectionHasMark}
-            disabled={disabled}
-          />
-          <ToolbarButton
             type="link"
             label="Link"
             icon="link"
@@ -111,14 +103,6 @@ export default class Toolbar extends React.Component {
             type="quote"
             label="Quote"
             icon="quote"
-            onClick={onBlockClick}
-            isActive={selectionHasBlock}
-            disabled={disabled}
-          />
-          <ToolbarButton
-            type="code"
-            label="Code Block"
-            icon="code-block"
             onClick={onBlockClick}
             isActive={selectionHasBlock}
             disabled={disabled}

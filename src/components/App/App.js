@@ -48,11 +48,11 @@ class App extends React.Component {
 
   static configError(config) {
     return (<div>
-      <h1>Error loading the CMS configuration</h1>
+      <h1>Chyba načítání CMS konfigurace</h1>
 
       <div>
-        <p>The <code>config.yml</code> file could not be loaded or failed to parse properly.</p>
-        <p><strong>Error message:</strong> {config.get('error')}</p>
+        <p>Soubor <code>config.yml</code> nemůže být načten nebo obsahuje chybu.</p>
+        <p><strong>Chyba:</strong> {config.get('error')}</p>
       </div>
     </div>);
   }
@@ -70,7 +70,7 @@ class App extends React.Component {
     const backend = currentBackend(this.props.config);
 
     if (backend == null) {
-      return <div><h1>Waiting for backend...</h1></div>;
+      return <div><h1>Načítání backendu...</h1></div>;
     }
 
     return (
@@ -115,7 +115,7 @@ class App extends React.Component {
     }
 
     if (config.get('isFetching')) {
-      return <Loader active>Loading configuration...</Loader>;
+      return <Loader active>Načítání konfigurace...</Loader>;
     }
 
     if (user == null) {

@@ -234,11 +234,11 @@ class MediaLibrary extends React.Component {
     const hasSearchResults = queriedFiles && !!queriedFiles.length;
     const hasMedia = hasSearchResults;
     const shouldShowEmptyMessage = !hasMedia;
-    const emptyMessage = (isLoading && !hasMedia && 'Loading...')
-      || (dynamicSearchActive && 'No results.')
-      || (!hasFiles && 'No assets found.')
-      || (!hasFilteredFiles && 'No images found.')
-      || (!hasSearchResults && 'No results.');
+    const emptyMessage = (isLoading && !hasMedia && 'Načítání...')
+      || (dynamicSearchActive && 'Žádné výsledky.')
+      || (!hasFiles && 'Žádné záznamy.')
+      || (!hasFilteredFiles && 'Obrázky nenalezeny.')
+      || (!hasSearchResults && 'Žádné výsledky.');
     const hasSelection = hasMedia && !isEmpty(selectedFile);
     const shouldShowButtonLoader = isPersisting || isDeleting;
 
@@ -255,8 +255,8 @@ class MediaLibrary extends React.Component {
                 <Icon type="close"/>
               </button>
               <h1 className="nc-mediaLibrary-title">
-                {privateUpload ? 'Private ' : null}
-                {forImage ? 'Images' : 'Media assets'}
+                {privateUpload ? 'Soukromé ' : null}
+                {forImage ? 'Obrázky' : 'Media'}
               </h1>
             </div>
             <div className="nc-mediaLibrary-search">
@@ -266,7 +266,7 @@ class MediaLibrary extends React.Component {
                 value={query}
                 onChange={this.handleSearchChange}
                 onKeyDown={event => this.handleSearchKeyDown(event)}
-                placeholder="Search..."
+                placeholder="Hledat..."
                 disabled={!dynamicSearchActive && !hasFilteredFiles}
               />
             </div>
@@ -274,7 +274,7 @@ class MediaLibrary extends React.Component {
           <div className="nc-mediaLibrary-actionContainer">
             <FileUploadButton
               className={`nc-mediaLibrary-uploadButton ${shouldShowButtonLoader ? 'nc-mediaLibrary-uploadButton-disabled' : ''}`}
-              label={isPersisting ? 'Uploading...' : 'Upload new'}
+              label={isPersisting ? 'Nahrávám...' : 'Nahrát'}
               imagesOnly={forImage}
               onChange={this.handlePersist}
               disabled={shouldShowButtonLoader}
@@ -331,7 +331,7 @@ class MediaLibrary extends React.Component {
                 : null
             }
           </div>
-          { isPaginating ? <h1 className="nc-mediaLibrary-paginatingMessage">Loading...</h1> : null }
+          { isPaginating ? <h1 className="nc-mediaLibrary-paginatingMessage">Načítám...</h1> : null }
         </div>
       </Modal>
     );

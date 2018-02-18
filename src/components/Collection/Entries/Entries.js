@@ -38,7 +38,7 @@ const Entries = ({
   }
 
   return <div className="nc-collectionPage-noEntries">{i18n.t('No Entries')}</div>;
-}
+};
 
 Entries.propTypes = {
   collections: ImmutablePropTypes.map.isRequired,

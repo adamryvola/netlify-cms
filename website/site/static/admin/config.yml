@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: netlify/netlify-cms
 
 publish_mode: editorial_workflow
